@@ -15,8 +15,12 @@ const [isExpanded, setIsExpanded]  = useState(false)
         { isExpanded ? (<> 
         <TriangleDownIcon size={24} aria-label="Show more" /><span>SHOW LESS</span>
         <div className="Book-url"><strong>URL:</strong> {book.url}</div>
+        { book.publisher != null && 
         <div className="Book-publisher"><strong>Publisher:</strong> {book.publisher}</div>
+        }
+        { book.publicationDate != null && 
         <div className="Book-pubdate"><strong>Publication Date:</strong> {book.publicationDate}</div>
+        }
         <div className="Book-pubdate"><strong>Full Description:</strong> {book.detailedDescription}</div></>):<div className="Full-description-control" aria-expanded={isExpanded}>
         <TriangleRightIcon size={24} aria-label="Show more" /><span>SHOW MORE</span>
         </div>}
