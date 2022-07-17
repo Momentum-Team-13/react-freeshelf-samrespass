@@ -6,7 +6,7 @@ export default function BookMaker({book}) {
 const [isExpanded, setIsExpanded]  = useState(false) 
     return (
           <div className="Book" key= {book}>
-        <div className="Book-image"><img src={book.coverImageUrl } alt={book.title} className="images"></img></div>
+        <div className="Book-image"><img src={book.coverImageUrl } onError={(err) => err.target.src = "no-image.png" }alt={book.title} className="images"></img></div>
         <div className="Book-details">
         <h1>{book.title}</h1>
         <h2>{book.author}</h2>
